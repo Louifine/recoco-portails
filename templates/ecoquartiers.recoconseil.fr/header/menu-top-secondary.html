@@ -73,8 +73,6 @@
         {% if is_switchtender or is_administrating_project %}
             <li class="nav-item dropdown nav-item-admin"
                 style="margin-right: 35px;
-                       padding-bottom:20px;
-                       border-bottom:solid 2px transparent;
                        {% if url_name == 'projects-project-list' %}border-bottom:solid 2px #0063CB;{% endif %}">
                 <div class="btn-group">
                     <a href="{% url 'projects-project-list' %}"
@@ -126,10 +124,7 @@
         </li>
         <!-- Address Book -->
         {% if request.user.is_staff %}
-            <li style="margin-right: 35px;
-                       padding-bottom:20px;
-                       border-bottom:solid 2px transparent;
-                       {% if 'addressbook' in url_name %}border-bottom:solid 2px #0063CB;{% endif %}">
+            <li style="margin-right: 35px;{% if 'addressbook' in url_name %}border-bottom:solid 2px #0063CB;{% endif %}">
                 <a href="{% url 'addressbook-organization-list' %}"
                    class="nav-link link-dark {% if url_name == 'addressbook-organization-list' %}active{% endif %}">
                     <span class="ms-1 me-2 align-middle">Carnet d'adresses</span>
